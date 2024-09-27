@@ -1,0 +1,57 @@
+unit pj01;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Edit,
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListBox, FMX.EditBox,
+  FMX.NumberBox;
+
+type
+  TZ = class(TForm)
+    Confirmar: TButton;
+    EdtNome: TEdit;
+    NomeSla: TLabel;
+    EdtSobrenome: TEdit;
+    Sobrenome: TLabel;
+    EdtCodigo: TEdit;
+    NumberIdade: TNumberBox;
+    Idade: TLabel;
+    Ativo: TCheckBox;
+    ComboSexo: TComboBox;
+    Sequiçu: TLabel;
+    NumberBox2: TNumberBox;
+    Salário: TLabel;
+    EdtCidade: TEdit;
+    Cidade: TLabel;
+    Label1: TLabel;
+    procedure ConfirmarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Z: TZ;
+  codigo, idade: Integer;
+  nome, sobrenome, cidade, sexo: string;
+  ativo: Boolean;
+  salario: Double;
+
+implementation
+
+{$R *.fmx}
+
+procedure TZ.ConfirmarClick(Sender: TObject);
+begin
+
+  codigo := StrToInt(EdtCodigo.Text);
+  nome := EdtNome.Text;
+  //sobrenome := EdtSobrenome;
+
+
+end;
+
+end.

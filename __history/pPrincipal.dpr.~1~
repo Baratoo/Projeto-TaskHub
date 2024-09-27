@@ -1,0 +1,14 @@
+program pPrincipal;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  uPrincipal in 'uPrincipal.pas' {frm_caption};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(Tfrm_caption, frm_caption);
+  Application.Run;
+end.

@@ -1,0 +1,72 @@
+unit uCadastro;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Layouts,
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Edit, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, FireDAC.UI.Intf,
+  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Phys, FireDAC.FMXUI.Wait,
+  FireDAC.Phys.SQLite, FireDAC.Phys.SQLiteDef, FireDAC.Stan.ExprFuncs,
+  FireDAC.Phys.SQLiteWrapper.Stat;
+
+type
+   TUsuario = record
+    ID: Integer;
+    login, senha: string;
+   end;
+
+  Tfrm_cadastro = class(TForm)
+    Layout1: TLayout;
+    Label1: TLabel;
+    Label2: TLabel;
+    edt_criarLogin: TEdit;
+    Label3: TLabel;
+    edt_criarSenha: TEdit;
+    btn_salvaConta: TButton;
+    FDQ_Usuarios: TFDQuery;
+    FDConnection1: TFDConnection;
+
+    procedure insereUsuarioBanco(usuario : TUsuario);
+    procedure btn_salvaContaClick(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_cadastro: Tfrm_cadastro;
+
+implementation
+
+{$R *.fmx}
+
+procedure Tfrm_cadastro.insereUsuarioBanco(usuario: TUsuario);
+begin
+  FDQ_Usuarios.Close;
+  FDQ_Usuarios.SQL.Clear;
+  FDQ_Usuarios.SQL.Add('INSERT INTO usuario (login, senha) ' +
+                      'VALUES (:login, :senha)');
+  FDQ_Usuarios.ParamByName('login').AsString := usuario.login;
+  FDQ_Usuarios.ParamByName('senha').AsString := usuario.senha;
+  FDQ_Usuarios.ExecSQL;
+end;
+
+procedure Tfrm_cadastro.btn_salvaContaClick(Sender: TObject);
+var vUsuario : TUsuario;
+begin
+
+  vUsuario.login := edt_criarLogin.Text;
+  vUsuario.senha := edt_criarSenha.Text;
+
+  insereUsuarioBanco(vUsuario);
+  frm_cadastro.Close;
+
+end;
+
+end.

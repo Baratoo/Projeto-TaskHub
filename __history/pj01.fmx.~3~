@@ -1,0 +1,139 @@
+﻿object Z: TZ
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 367
+  ClientWidth = 465
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Confirmar: TButton
+    StyledSettings = [Family, Size]
+    Position.X = 192.000000000000000000
+    Position.Y = 320.000000000000000000
+    TabOrder = 0
+    Text = 'Confirmar'
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TextSettings.FontColorForState.Hot = claBlack
+    OnClick = ConfirmarClick
+    object EdtNome: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 5
+      Position.X = -136.000000000000000000
+      Position.Y = -280.000000000000000000
+      Size.Width = 161.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object Nome: TLabel
+    Position.X = 56.000000000000000000
+    Position.Y = 23.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Nome'
+    TabOrder = 1
+  end
+  object EdtSobrenome: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 2
+    Position.X = 272.000000000000000000
+    Position.Y = 40.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Sobrenome: TLabel
+    Position.X = 272.000000000000000000
+    Position.Y = 23.000000000000000000
+    Text = 'Sobrenome'
+    TabOrder = 3
+  end
+  object EdtCodigo: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 4
+    Position.X = 56.000000000000000000
+    Position.Y = 96.000000000000000000
+  end
+  object NumberIdade: TNumberBox
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 5
+    Cursor = crIBeam
+    Position.X = 216.000000000000000000
+    Position.Y = 96.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Idade: TLabel
+    Position.X = 216.000000000000000000
+    Position.Y = 79.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Idade'
+    TabOrder = 6
+  end
+  object Ativo: TCheckBox
+    Position.X = 312.000000000000000000
+    Position.Y = 99.000000000000000000
+    Size.Width = 65.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Text = 'Ativo'
+  end
+  object ComboSexo: TComboBox
+    Items.Strings = (
+      'Masculino'
+      'Feminino')
+    Position.X = 56.000000000000000000
+    Position.Y = 154.000000000000000000
+    TabOrder = 8
+  end
+  object Sequiçu: TLabel
+    Position.X = 56.000000000000000000
+    Position.Y = 136.000000000000000000
+    Text = 'Sequi'#231'u'
+    TabOrder = 9
+  end
+  object NumberBox2: TNumberBox
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 10
+    Cursor = crIBeam
+    Max = 99999.000000000000000000
+    ValueType = Float
+    KeyboardType = NumbersAndPunctuation
+    Position.X = 56.000000000000000000
+    Position.Y = 209.000000000000000000
+  end
+  object Salário: TLabel
+    Position.X = 56.000000000000000000
+    Position.Y = 192.000000000000000000
+    Text = 'Sal'#225'rio'
+    TabOrder = 11
+  end
+  object EdtCidade: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 12
+    Position.X = 56.000000000000000000
+    Position.Y = 265.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Cidade: TLabel
+    Position.X = 56.000000000000000000
+    Position.Y = 248.000000000000000000
+    Text = 'Cidade'
+    TabOrder = 13
+  end
+  object Label1: TLabel
+    Position.X = 56.000000000000000000
+    Position.Y = 80.000000000000000000
+    Text = 'Codigo'
+    TabOrder = 14
+  end
+end

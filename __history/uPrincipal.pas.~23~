@@ -1,0 +1,64 @@
+unit uPrincipal;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Layouts, FMX.Edit;
+
+type
+  Tfrm_login = class(TForm)
+    btn_login: TButton;
+    Layout1: TLayout;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    edt_login: TEdit;
+    edt_senha: TEdit;
+    Layout2: TLayout;
+    btn_criarConta: TButton;
+    procedure btn_loginClick(Sender: TObject);
+    procedure btn_criarContaClick(Sender: TObject);
+
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_login: Tfrm_login;
+
+implementation
+
+{$R *.fmx}
+
+uses uTarefas, uCadastro;
+
+procedure Tfrm_login.btn_loginClick(Sender: TObject);
+var Usuario: TUsuario;
+begin
+  Usuario := uCadastro.frm_cadastro.BuscaUsuario(edt_login.ToString, edt_senha.ToString);
+
+if Usuario.ID <> -1 then
+begin
+  frm_tarefas.TabControl1.tabIndex := 0;
+  frm_tarefas.show;
+end
+else
+begin
+  ShowMessage('Usuário não encontrado!!')
+end;
+
+end;
+
+procedure Tfrm_login.btn_criarContaClick(Sender: TObject);
+begin
+
+  frm_cadastro.Show;
+
+end;
+
+end.
